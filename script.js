@@ -21,7 +21,7 @@ function addBookToLibrary() {
   const newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
   console.log(myLibrary);
-  // displayBooks();
+  displayBooks();
 }
 
 function openForm() {
@@ -34,6 +34,25 @@ function closeForm() {
   document.getElementById("book-cards").style.display = "flex";
 }
 
+function displayBooks() {
+  const libraryDisplay = document.getElementById("book-cards");
+  libraryDisplay.innerHTML = "";
+  for (let i = 0; i < myLibrary.length; i++) {
+    let book = myLibrary[i];
+    let bookCardDisplay = document.createElement("div");
+    bookCardDisplay.innerHTML = `
+      <div class="card">
+        <span class="title-txt">${book.title}</span>
+        <span class="author-txt">by: ${book.author}</span>
+        <span class="pages-txt">${book.pages}</span>
+        <span>${book.read ? "Read" : "Not Read"}</span>
+      </div>
+      `;
+    libraryDisplay.appendChild(bookCardDisplay);
+    document.getElementById("book-form").reset();
+  }
+}
+
 //Event Listeners
 addBookButton.addEventListener("click", openForm);
 closeFormButton.addEventListener("click", closeForm);
@@ -41,4 +60,5 @@ closeFormButton.addEventListener("click", closeForm);
 document.getElementById("book-form").addEventListener("submit", (event) => {
   event.preventDefault();
   addBookToLibrary();
+  closeForm();
 });
