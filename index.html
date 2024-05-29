@@ -9,7 +9,20 @@
 <body>
   <div class="main-container">
     <div class="sub-container">
-      <button class="btn" id="add-btn">New Book</button>
+      <button class="btn" id="add-btn" onclick="openForm()">New Book</button>
+        <div class="form-popup" id="add-book-form">
+          <form action="" class="form-container" id="book-form">
+            <h1>Add a new Book</h1>
+
+            <label for="book-title">Book Title</label>
+            <input type="text" id="book-title" placeholder="Book Title" required>
+
+            <label for="book-author">Author</label>
+            <input type="text" id="book-title" placeholder="Author" required>
+
+            <button id="close-form" onclick="closeForm()">Close</button>
+          </form>
+        </div>
     </div>
   </div>
   <script src="script.js"></script>
