@@ -9,19 +9,39 @@
 <body>
   <div class="main-container">
     <div class="sub-container">
-      <button class="btn" id="add-btn" onclick="openForm()">New Book</button>
+      <button class="btn" id="add-btn">New Book</button>
         <div class="form-popup" id="add-book-form">
-          <form action="" class="form-container" id="book-form">
+          <form class="form-container" id="book-form">
             <h1>Add a new Book</h1>
 
             <label for="book-title">Book Title</label>
             <input type="text" id="book-title" placeholder="Book Title" required>
 
             <label for="book-author">Author</label>
-            <input type="text" id="book-title" placeholder="Author" required>
+            <input type="text" id="book-author" placeholder="Author" required>
 
-            <button id="close-form" onclick="closeForm()">Close</button>
+            <label for="num-pages">Number of Pages</label>
+            <input type="text" id="num-pages" placeholder="Pages" required>
+
+            <label for="read">Read?</label>
+            <input type="checkbox" id="read">
+
+            <button type="submit" id="submit-form" class="form-buttons">Add</button>
+
+            <button type="button" id="close-form" class="form-buttons">Close</button>
           </form>
+        </div>
+        <div id="book-cards">
+          <div class="card">
+            <span>Title</span>
+            <span>Author</span>
+            <span>Pages</span>
+          </div>
+          <div class="card">
+            <span>Title</span>
+            <span>Author</span>
+            <span>Pages</span>
+          </div>
         </div>
     </div>
   </div>
