@@ -79,11 +79,12 @@ button {
 
 #book-cards {
   grid-row: 4 / 11;
-  grid-column: 1 / 13;
+  grid-column: 1 / 14;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 1rem;
+  margin: 0 1em 0 1em;
 }
 
 .card {

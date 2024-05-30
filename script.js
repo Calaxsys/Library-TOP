@@ -53,10 +53,11 @@ function displayBooks() {
         <span class="author-txt">by: ${book.author}</span>
         <span class="pages-txt">${book.pages}</span>
         <button class="toggle-read-btn" onclick="toggleRead(${i})">${book.read ? "Read" : "Not Read"}</button>
-        <button class="remove-book-btn">Delete</button>
+        <button class="remove-book-btn" onclick="deleteBook(${i})">Delete</button>
       </div>
       `;
     libraryDisplay.appendChild(bookCardDisplay);
+    changeReadBtnColor(bookCardDisplay.querySelector(".toggle-read-btn"), book.read);
     document.getElementById("book-form").reset();
   }
 }
@@ -71,6 +72,16 @@ function toggleRead(index) {
 function deleteBook(index) {
   myLibrary.splice(index, 1)
   displayBooks();
+}
+
+function changeReadBtnColor(button, isRead) {
+  if (isRead) {
+    button.style.backgroundColor = "green";
+    button.style.color = "white";
+  } else {
+    button.style.backgroundColor = "red";
+    button.style.color = "white";
+  }
 }
 
 //Event Listeners
